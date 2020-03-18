@@ -44,9 +44,27 @@ class SocialGraph:
         self.friendships = {}
         # !!!! IMPLEMENT ME
 
-        # Add users
+        import random
+        def add_random_friendships(user_id, num_friends, num_users):
+            friend_ids = set()
+            for i in range(num_friends):
+                rand_id = random.randint(1, num_users)
+                if rand_id == user_id or rand_id in friend_ids:
+                    continue
+                friend_ids.add(rand_id)
+                self.add_friendship(user_id, rand_id)
 
+        # Add users
+        import math
+        for i in range(num_users):
+            self.add_user(i+1)
         # Create friendships
+        for i in range(num_users):
+            num_friends =  round(random.random() * math.ceil(random.randint(0, avg_friendships * 2)))
+            add_random_friendships(i+1, num_friends, num_users)
+        
+        print('Users', self.users)
+        print('Friendships', self.friendships)
 
     def get_all_social_paths(self, user_id):
         """
