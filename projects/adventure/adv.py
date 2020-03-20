@@ -5,6 +5,8 @@ from world import World
 import random
 from ast import literal_eval
 
+from traversal import traverse_graph
+
 # Load world
 world = World()
 
@@ -27,8 +29,7 @@ player = Player(world.starting_room)
 
 # Fill this out with directions to walk
 # traversal_path = ['n', 'n']
-traversal_path = []
-
+traversal_path = traverse_graph(room_graph, 0)
 
 
 # TRAVERSAL TEST

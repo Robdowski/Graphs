@@ -16,7 +16,7 @@ class Queue():
 def earliest_ancestor(ancestors, starting_node):
 
     graph = defaultdict(list)
-    # key: child, value: parent
+    # key: child, value: parent[]
 
     for ancestor in ancestors:
         graph[ancestor[1]].append(ancestor[0])

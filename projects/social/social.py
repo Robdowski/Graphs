@@ -76,8 +76,6 @@ class SocialGraph:
             num_friends =  round(random.random() * math.ceil(random.randint(0, avg_friendships * 2)))
             add_random_friendships(i+1, num_friends, num_users)
         
-        print('Users', self.users)
-        print('Friendships', self.friendships)
 
     def get_all_social_paths(self, user_id):
         """
@@ -115,6 +113,6 @@ class SocialGraph:
 if __name__ == '__main__':
     sg = SocialGraph()
     sg.populate_graph(10, 2)
-    print(sg.friendships)
+    print("Friendships:", sg.friendships)
     connections = sg.get_all_social_paths(1)
     print("Connections:", connections)
